@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "24382959046",
+    "project_id": "lifesaver-59222",
+    "storage_bucket": "lifesaver-59222.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24382959046:android:6f4f03956c1fd66e8516c7",
+        "android_client_info": {
+          "package_name": "com.masai.lifesaver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24382959046-0q3o7r01jh0h1c3vb3fbfaineed1vdjn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCazcRtY8hqvHxjmEaX3b7ynXkKdb90I-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24382959046-0q3o7r01jh0h1c3vb3fbfaineed1vdjn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
