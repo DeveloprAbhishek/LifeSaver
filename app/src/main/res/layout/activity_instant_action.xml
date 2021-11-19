@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.activity.InstantActionActivity">
+
+    <RelativeLayout
+        android:id="@+id/two_btns_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login_as_user"
+            style="@style/instant_screen_button"
+            android:layout_alignParentStart="true"
+            android:text="Login as user" />
+
+        <Button
+            android:id="@+id/btn_login_as_partner"
+            style="@style/instant_screen_button"
+            android:layout_alignParentEnd="true"
+            android:text="Login as partner" />
+    </RelativeLayout>
+
+
+    <Button
+        style="@style/instant_screen_button"
+        android:layout_below="@+id/two_btns_layout"
+        android:layout_centerHorizontal="true"
+        android:text="Emergency" />
+
+</RelativeLayout>
