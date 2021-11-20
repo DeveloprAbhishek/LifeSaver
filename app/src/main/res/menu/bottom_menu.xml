@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_home_logo"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/menu_training"
+        android:icon="@drawable/ic_training_icon"
+        android:title="Training" />
+
+    <item
+        android:id="@+id/menu_ongoing"
+        android:icon="@drawable/ic_ongoing_icon"
+        android:title="Ongoing" />
+
+    <item
+        android:id="@+id/menu_money"
+        android:icon="@drawable/ic_money_icon"
+        android:title="Money" />
+</menu>
