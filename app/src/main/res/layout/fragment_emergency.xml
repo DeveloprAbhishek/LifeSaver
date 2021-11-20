@@ -60,19 +60,54 @@
         android:hint="Enter your password here"
         android:inputType="textPassword" />
 
-    <EditText
+    <RelativeLayout
         android:id="@+id/etName"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/etPasswordSUp"
-        android:layout_marginHorizontal="28dp"
-        android:layout_marginVertical="20dp"
-        android:autofillHints="password"
-        android:background="@drawable/et_bg"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="center"
-        android:hint="Enter your password here"
-        android:inputType="textPassword" />
+        android:layout_margin="28dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/etExpDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/et_bg"
+            android:fontFamily="@font/poppins_medium"
+            android:gravity="center"
+            android:hint="Enter Date here"
+            android:inputType="date"
+            android:padding="12dp"
+            android:textColor="@color/quantum_grey"
+            android:textSize="15sp"
+            android:textStyle="italic|bold" />
+
+        <ImageView
+            android:id="@+id/btn_select_date_exp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/calender_icon" />
+    </RelativeLayout>
+
+<!--    <EditText-->
+<!--        android:id="@+id/etName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_below="@id/etPasswordSUp"-->
+<!--        android:layout_marginHorizontal="28dp"-->
+<!--        android:layout_marginVertical="20dp"-->
+<!--        android:autofillHints="password"-->
+<!--        android:background="@drawable/et_bg"-->
+<!--        android:fontFamily="@font/poppins_medium"-->
+<!--        android:gravity="center"-->
+<!--        android:hint="Enter date here"-->
+<!--        android:inputType="textPassword" />-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnSignUp"
