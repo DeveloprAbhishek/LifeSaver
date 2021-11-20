@@ -31,6 +31,25 @@
         <entry key="..\:/Users/Asus/My Android Projects/LifeSaver/app/src/main/res/menu/bottom_menu.xml" value="0.13740458015267176" />
         <entry key="..\:/Users/Asus/My Android Projects/LifeSaver/app/src/main/res/menu/nav_menu.xml" value="0.2578125" />
         <entry key="..\:/Users/Asus/My Android Projects/LifeSaver/app/src/main/res/menu/user_home.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/ic_bg_instant.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/ic_emergency_icon.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/ic_location.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/ic_ls_splash.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/ic_new_booking_add.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/ic_old_booking_icon.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/instant_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/drawable/instant_sc_btn_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/activity_book_ambulance.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/activity_booking_records.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/activity_driver.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/activity_instant_action.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/activity_user_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/booking_rec_item_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/layout/fragment_previ_bookings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/RX-S7/AndroidStudioProjects/LifeSaver/app/src/main/res/menu/nav_menu.xml" value="0.264" />
       </map>
     </option>
   </component>

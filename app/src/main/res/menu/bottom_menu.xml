@@ -8,15 +8,12 @@
     <item
         android:id="@+id/menu_training"
         android:icon="@drawable/ic_training_icon"
-        android:title="Training" />
+        android:title="New Booking" />
 
     <item
         android:id="@+id/menu_ongoing"
         android:icon="@drawable/ic_ongoing_icon"
-        android:title="Ongoing" />
+        android:title="View Bookings" />
 
-    <item
-        android:id="@+id/menu_money"
-        android:icon="@drawable/ic_money_icon"
-        android:title="Money" />
+
 </menu>

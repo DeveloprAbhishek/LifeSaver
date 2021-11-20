@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="instant_screen_button" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">170dp</item>
+        <item name="android:layout_margin">18dp</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+</resources>

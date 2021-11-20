@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.activity.InstantActionActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="7dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_ls_splash" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_bg_instant" />
+
+    <LinearLayout
+        android:id="@+id/button_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="22dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login_as_user"
+                style="@style/instant_screen_button"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppins"
+                android:padding="12dp"
+                android:text="Login as user"
+                android:textColor="@color/primary_color1"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login_as_partner"
+                style="@style/instant_screen_button"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppins"
+                android:padding="12dp"
+                android:text="Login as partner"
+                android:textColor="@color/primary_color1" />
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="12dp"
+            android:text="Emergency"
+            android:textColor="@color/primary_color1" />
+    </LinearLayout>
+
+</RelativeLayout>
