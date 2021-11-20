@@ -31,10 +31,6 @@ class EmergencyFragment : Fragment(R.layout.fragment_emergency) {
                 .build()
 
 
-        btn_kaam_krr.setOnClickListener {
-            datePicker.show(requireFragmentManager(),"DatePicker")
-        }
-
         datePicker.addOnPositiveButtonClickListener { selecton ->
             val timeZoneUTC = TimeZone.getDefault()
             val offsetFromUTC = timeZoneUTC.getOffset(Date().time) * -1
