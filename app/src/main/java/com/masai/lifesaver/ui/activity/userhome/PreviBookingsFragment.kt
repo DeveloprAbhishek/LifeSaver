@@ -16,35 +16,35 @@ class PreviBookingsFragment : Fragment(R.layout.fragment_previ_bookings) {
         super.onViewCreated(view, savedInstanceState)
 
         val item = BookingRecordModel(
-            "Abhishek Colony",
+            "Royal Mangal Hotel",
             "SMS Hospital",
-            "12-12-12",
+            "12-12-21",
             "9AM",
-            "Anol",
+            "Amol",
             7845121215
         )
         val ite2 = BookingRecordModel(
-            "Abhishek Colony",
+            "Royal Mangal Hotel",
             "SMS Hospital",
-            "12-12-12",
+            "12-11-21",
             "9AM",
-            "Anol",
+            "Amol",
             7845121215
         )
         val item3 = BookingRecordModel(
-            "Abhishek Colony",
+            "Royal Mangal Hotel",
             "SMS Hospital",
-            "12-12-12",
+            "12-12-21",
             "9AM",
-            "Anol",
+            "Amol",
             7845121215
         )
         val ite4 = BookingRecordModel(
-            "Abhishek Colony",
+            "Royal Mangal Hotel",
             "SMS Hospital",
             "12-12-12",
             "9AM",
-            "Anol",
+            "Amol",
             7845121215
         )
         recordList.add(item)
