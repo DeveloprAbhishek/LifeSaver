@@ -24,11 +24,7 @@
             android:name=".ui.activity.userhome.UserHomeActivity"
             android:exported="true"
             android:label="@string/title_activity_user_home" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.BookingRecords"
@@ -37,8 +33,13 @@
         </activity>
         <activity
             android:name=".ui.activity.SplashScreen"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.DriverActivity"
@@ -57,19 +58,16 @@
 
         <activity
             android:name=".ui.activity.EmergencyActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.activity.HomeActivity"
-            android:exported="true" />
+            android:exported="true" >
 
+        </activity>
         <activity
             android:name=".ui.activity.HomeActivity"
-            android:exported="true"/>
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
-            android:value="AIzaSyDD56qkafCWVp0dCWuc0wIp0YPohjcNQBI" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

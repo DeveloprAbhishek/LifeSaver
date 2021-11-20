@@ -11,7 +11,7 @@ import com.google.android.material.navigation.NavigationView
 import com.masai.lifesaver.R
 import kotlinx.android.synthetic.main.activity_user_home.*
 
-class UserHomeActivity : AppCompatActivity() {
+class UserHomeActivity: AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
 
@@ -52,7 +52,6 @@ class UserHomeActivity : AppCompatActivity() {
 
 
     }
-
 
     private fun replaceFragment(fragment: Fragment, title: String) {
         val fragmentManager = supportFragmentManager
