@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.activity.InstantActionActivity">
+    tools:context=".ui.activity.DriverActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
@@ -48,8 +48,8 @@
                 android:fontFamily="@font/poppins"
                 android:padding="12dp"
                 android:text="Login as user"
-                android:textColor="@color/primary_color1"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/primary_color1" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_login_as_partner"
