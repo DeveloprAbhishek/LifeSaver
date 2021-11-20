@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.loginpackage.LoginFragment">
+
+    <ImageView
+        android:id="@+id/iv_app_logo"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_ls_splash" />
+
+    <EditText
+        android:id="@+id/etNameSUp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/iv_app_logo"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="name"
+        android:background="@drawable/et_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:hint="Enter your Id here"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/etEmailSUp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/etNameSUp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="10dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/et_bg"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="center"
+        android:hint="Enter your password here"
+        android:inputType="textPassword" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/etEmailSUp"
+        android:layout_marginHorizontal="28dp"
+        android:layout_marginTop="90dp"
+        android:backgroundTint="@color/primary_color1"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Sign UP"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:cornerRadius="10dp" />
+</RelativeLayout>

@@ -59,7 +59,7 @@
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/poppins"
                 android:padding="12dp"
-                android:text="Login as partner"
+                android:text="@string/login_as_partner"
                 android:textColor="@color/primary_color1" />
         </RelativeLayout>
 
@@ -72,7 +72,9 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_semibold"
             android:padding="12dp"
-            android:text="Emergency"
+            android:text="@string/emergency"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="@color/primary_color1" />
     </LinearLayout>
 

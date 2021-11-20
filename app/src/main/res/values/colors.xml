@@ -11,6 +11,7 @@
 
 
     <color name="primary_color1">#ff4b67</color>
+    <color name="materialRed">#ff4b67</color>
     <color name="primary_color2">#fe5a74</color>
     <color name="primary_color3">#fd6d85</color>
     <color name="secondary_color1">#1e1c1a</color>
