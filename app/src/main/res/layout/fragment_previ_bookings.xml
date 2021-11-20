@@ -6,6 +6,7 @@
     tools:context=".ui.activity.userhome.PreviBookingsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewRecords"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:itemCount="2"
