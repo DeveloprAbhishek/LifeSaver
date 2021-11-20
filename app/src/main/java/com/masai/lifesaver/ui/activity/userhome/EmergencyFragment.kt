@@ -1,11 +1,8 @@
 package com.masai.lifesaver.ui.activity.userhome
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.Fragment
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.masai.lifesaver.R
 import kotlinx.android.synthetic.main.fragment_emergency.*
@@ -22,6 +19,7 @@ class EmergencyFragment : Fragment(R.layout.fragment_emergency) {
     }
     private fun initDate() {
         curr_date = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(Date())
+        etExpDate.setText(curr_date)
 
         val datePicker =
             MaterialDatePicker.Builder.datePicker()
@@ -30,6 +28,9 @@ class EmergencyFragment : Fragment(R.layout.fragment_emergency) {
                 .setTheme(R.style.calender_theme)
                 .build()
 
+        btn_select_date_exp.setOnClickListener {
+            datePicker.show(requireFragmentManager(), "DatePicker")
+        }
 
         datePicker.addOnPositiveButtonClickListener { selecton ->
             val timeZoneUTC = TimeZone.getDefault()
@@ -37,8 +38,7 @@ class EmergencyFragment : Fragment(R.layout.fragment_emergency) {
 
             val simpleDateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.UK)
             val date = Date(selecton + offsetFromUTC)
-            //etExpDate.setText(simpleDateFormat.format(date))
+            etExpDate.setText(simpleDateFormat.format(date))
         }
-
     }
 }
