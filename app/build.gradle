@@ -32,13 +32,10 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        viewBinding true
-    }
 }
 
 dependencies {
-
+    implementation project(':simulator')
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
@@ -55,10 +52,13 @@ dependencies {
     //firebase
     implementation platform('com.google.firebase:firebase-bom:29.0.0')
     implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.android.libraries.places:places:2.5.0'
 
     //Google Maps dependencies
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
+
+    implementation 'com.karumi:dexter:6.2.3'
 
 
     //navigation
