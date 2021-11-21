@@ -8,6 +8,7 @@ import android.os.Handler
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.masai.lifesaver.R
+import com.masai.lifesaver.ui.loginpackage.InstantActionActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
