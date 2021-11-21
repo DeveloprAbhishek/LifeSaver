@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.fragment_emergency.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class EmergencyFragment : Fragment(R.layout.fragment_emergency) {
+class NewBookingFragment : Fragment(R.layout.fragment_emergency) {
     private var curr_date = ""
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

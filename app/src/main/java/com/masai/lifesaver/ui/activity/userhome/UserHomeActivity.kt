@@ -37,13 +37,13 @@ class UserHomeActivity: AppCompatActivity() {
 
             when (it.itemId) {
                 R.id.nav_settings ->
-                    replaceFragment(BookingFragment(), it.title.toString())
+                    replaceFragment(UserHomeFragment(), it.title.toString())
 
                 R.id.nav_about ->
                     replaceFragment(PreviBookingsFragment(), it.title.toString())
 
                 R.id.nav_help ->
-                    replaceFragment(EmergencyFragment(), it.title.toString())
+                    replaceFragment(NewBookingFragment(), it.title.toString())
 
             }
             true
@@ -75,13 +75,13 @@ class UserHomeActivity: AppCompatActivity() {
 
     private fun setBottomNavigation() {
 
-        supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, BookingFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, UserHomeFragment()).commit()
 
         menu_bottom.setOnItemSelectedListener(NavigationBarView.OnItemSelectedListener { item ->
             var temp: Fragment? = null
             when (item.itemId) {
-                R.id.menu_home -> temp = BookingFragment()
-                R.id.menu_training -> temp = EmergencyFragment()
+                R.id.menu_home -> temp = UserHomeFragment()
+                R.id.menu_training -> temp = NewBookingFragment()
                 R.id.menu_ongoing -> temp = PreviBookingsFragment()
             }
             if (temp != null) {
