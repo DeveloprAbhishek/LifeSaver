@@ -27,7 +27,13 @@
         <activity
             android:name=".ui.activity.userhome.UserHomeActivity"
             android:exported="true"
-            android:label="@string/title_activity_user_home"></activity>
+            android:label="@string/title_activity_user_home">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".ui.activity.BookingRecords"
@@ -44,11 +50,7 @@
         <activity
             android:name=".ui.loginpackage.InstantActionActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.activity.AssociateActivity"
