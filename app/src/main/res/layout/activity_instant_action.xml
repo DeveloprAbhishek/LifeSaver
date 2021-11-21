@@ -47,7 +47,7 @@
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/poppins"
                 android:padding="12dp"
-                android:text="Login as user"
+                android:text="Login"
                 android:textColor="@color/primary_color1"
                 android:textStyle="bold" />
 
@@ -55,12 +55,12 @@
                 android:id="@+id/btn_login_as_partner"
                 style="@style/instant_screen_button"
                 android:layout_alignParentEnd="true"
-                android:textStyle="bold"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/poppins"
                 android:padding="12dp"
-                android:text="Login as partner"
-                android:textColor="@color/primary_color1" />
+                android:text="Sign Up"
+                android:textColor="@color/primary_color1"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <com.google.android.material.button.MaterialButton
@@ -72,7 +72,9 @@
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins_semibold"
             android:padding="12dp"
-            android:text="Emergency"
+            android:text="@string/emergency"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:textColor="@color/primary_color1" />
     </LinearLayout>
 
