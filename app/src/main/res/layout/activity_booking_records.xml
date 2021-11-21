@@ -1,145 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="7dp"
     tools:context=".ui.activity.userhome.UserHomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:id="@+id/ext_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp">
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardHeartAttack"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintEnd_toStartOf="@+id/cardBleeding"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon_heartattack" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardBleeding"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintEnd_toStartOf="cardRespiratrory"
-            app:layout_constraintStart_toEndOf="@id/cardHeartAttack"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon_bleeding" />
-        </com.google.android.material.card.MaterialCardView>
+        android:orientation="vertical">
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardRespiratrory"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cardBleeding"
-            app:layout_constraintTop_toTopOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon_respiratory" />
-        </com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHeartAttack"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@+id/cardBleeding"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeicon_heartattack" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBleeding"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@id/cardRespiratrory"
+                app:layout_constraintStart_toEndOf="@id/cardHeartAttack"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeicon_bleeding" />
+            </com.google.android.material.card.MaterialCardView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRespiratrory"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardBleeding"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeicon_respiratory" />
+            </com.google.android.material.card.MaterialCardView>
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    <!--    3rd row-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardVommiting"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@id/cardBodyHeat"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeicon_vommiting" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBodyHeat"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@id/cardHeadache"
+                app:layout_constraintStart_toEndOf="@id/cardVommiting"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeicon_bodyheat" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHeadache"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardBodyHeat"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeicon_hedache" />
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardVommiting1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@id/cardBodyHeat1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/homeicon_others" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/cardBodyHeat1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toStartOf="@id/cardHeadache1"
+                app:layout_constraintStart_toEndOf="@id/cardVommiting1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/cardHeadache1"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:gravity="center_vertical"
+                app:cardCornerRadius="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardBodyHeat1"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_call"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp">
+        android:layout_below="@+id/ext_2"
+        android:layout_alignParentEnd="true">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardVommiting"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintEnd_toStartOf="@+id/cardBodyHeat"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon_vommiting" />
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardBodyHeat"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintEnd_toStartOf="cardHeadache"
-            app:layout_constraintStart_toEndOf="@id/cardVommiting"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon_bodyheat" />
-        </com.google.android.material.card.MaterialCardView>
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardHeadache"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginStart="19dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/cardBodyHeat"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/homeicon_hedache" />
-        </com.google.android.material.card.MaterialCardView>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_call_icon2" />
+    </LinearLayout>
 
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/btnEmergencyfromHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
         android:backgroundTint="@color/white"
-        android:padding="12dp"
-        android:layout_gravity="bottom"
-        android:layout_marginTop="100dp"
-        app:strokeColor="@color/primary_color1"
-        app:strokeWidth="1dp">
+        android:padding="8dp"
+        android:background="@drawable/btn_emer_bg"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="12dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FF5757"
             android:gravity="center"
-            android:padding="3dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -153,14 +217,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
                 android:gravity="center"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:text="Emergency"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
-</LinearLayout>
+</RelativeLayout>
 
     <!--<TextView-->
     <!--android:id="@+id/recent_tag"-->
