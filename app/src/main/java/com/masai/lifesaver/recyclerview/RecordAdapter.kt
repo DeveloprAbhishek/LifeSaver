@@ -3,12 +3,17 @@ package com.masai.lifesaver.recyclerview
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.masai.lifesaver.R
+import com.masai.lifesaver.interfaces.OnDetailClickListener
 import com.masai.lifesaver.models.BookingRecordModel
 import kotlinx.android.synthetic.main.booking_rec_item_layout.view.*
 
-class RecordAdapter(private val recordList: ArrayList<BookingRecordModel>) :
+class RecordAdapter(
+    private val recordList: ArrayList<BookingRecordModel>,
+    val clickListener: OnDetailClickListener
+) :
     RecyclerView.Adapter<RecordAdapter.ViewHolder>() {
 
 
@@ -21,6 +26,9 @@ class RecordAdapter(private val recordList: ArrayList<BookingRecordModel>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = recordList[position]
         holder.setData(item)
+        holder.item_clickable.setOnClickListener {
+            clickListener.onItemClick(item)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -28,6 +36,8 @@ class RecordAdapter(private val recordList: ArrayList<BookingRecordModel>) :
     }
 
     class ViewHolder(private val itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        val item_clickable = itemView.findViewById<LinearLayout>(R.id.item_clickable)
         fun setData(item: BookingRecordModel) {
             itemView.apply {
                 tv_record_date.text = item.date

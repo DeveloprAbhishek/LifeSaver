@@ -1,5 +1,6 @@
 package com.masai.lifesaver.ui.activity.userhome
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,11 +9,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.masai.lifesaver.R
+import com.masai.lifesaver.interfaces.OnDetailClickListener
 import com.masai.lifesaver.models.BookingRecordModel
 import com.masai.lifesaver.recyclerview.RecordAdapter
+import com.masai.lifesaver.ui.activity.BookingDetailsActivity
 import kotlinx.android.synthetic.main.fragment_previ_bookings.*
 
-class PreviBookingsFragment : Fragment(R.layout.fragment_previ_bookings) {
+class PreviBookingsFragment : Fragment(R.layout.fragment_previ_bookings), OnDetailClickListener {
 
     private var recordList = ArrayList<BookingRecordModel>()
     private lateinit var gAuth: FirebaseAuth
@@ -39,52 +42,24 @@ class PreviBookingsFragment : Fragment(R.layout.fragment_previ_bookings) {
                 setRecyclerView()
             }.addOnFailureListener { exception ->
                     Log.w("Abhishek", "Error getting documents: ", exception)
-                }
+            }
         }
-
-//        val item = BookingRecordModel(
-//            "Royal Mangal Hotel",
-//            "SMS Hospital",
-//            "12-12-21",
-//            "9AM",
-//            "Amol",
-//            7845121215
-//        )
-//        val ite2 = BookingRecordModel(
-//            "Royal Mangal Hotel",
-//            "SMS Hospital",
-//            "12-11-21",
-//            "9AM",
-//            "Amol",
-//            7845121215
-//        )
-//        val item3 = BookingRecordModel(
-//            "Royal Mangal Hotel",
-//            "SMS Hospital",
-//            "12-12-21",
-//            "9AM",
-//            "Amol",
-//            7845121215
-//        )
-//        val ite4 = BookingRecordModel(
-//            "Royal Mangal Hotel",
-//            "SMS Hospital",
-//            "12-12-12",
-//            "9AM",
-//            "Amol",
-//            7845121215
-//        )
-//        recordList.add(item)
-//        recordList.add(ite2)
-//        recordList.add(ite4)
-//        recordList.add(item3)
-
 
     }
 
     private fun setRecyclerView() {
-        recyclerViewRecords.adapter = RecordAdapter(recordList)
+        recyclerViewRecords.adapter = RecordAdapter(recordList,this)
         recyclerViewRecords.layoutManager = LinearLayoutManager(requireActivity())
 
+    }
+
+    override fun onItemClick(record: BookingRecordModel) {
+        val intent = Intent(requireActivity(), BookingDetailsActivity::class.java)
+        intent.putExtra("date", record.date)
+        intent.putExtra("time", record.time)
+        intent.putExtra("name", record.name)
+        intent.putExtra("from", record.from)
+        intent.putExtra("to", record.to)
+        startActivity(intent)
     }
 }
