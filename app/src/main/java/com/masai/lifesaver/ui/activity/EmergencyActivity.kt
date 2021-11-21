@@ -513,6 +513,8 @@ class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
         blackPolyline?.remove()
         originMarker?.remove()
         destinationMarker?.remove()
+        startActivity(Intent(this,UserHomeActivity::class.java))
+        finishAffinity()
     }
 
     override fun showRoutesNotAvailableError() {
@@ -530,7 +532,7 @@ class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
     //Firebase Authentication check
     private fun processReqToGoogle() {
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))//ignore this error and run the app.
+            .requestIdToken(getString(R.string.default_web_client_id))   //ignore this error and run the app.
             .requestEmail().build()
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         executeLoginProcess()

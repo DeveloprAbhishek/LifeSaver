@@ -6,5 +6,5 @@ data class BookingRecordModel(
     var date: String? = "",
     var time: String? = "",
     var name: String? = "",
-    var mobile: Long? = 0
+    var mobile: String? = ""
 )

@@ -26,54 +26,65 @@ class PreviBookingsFragment : Fragment(R.layout.fragment_previ_bookings) {
             db.collection("user").document(uid).collection("bookings").get().addOnSuccessListener { documents ->
                 for (document in documents) {
                     Log.d("Abhishek", "${document.id} => ${document.data}")
+                    val name=document.data.get("name").toString()
+                    val to=document.data.get("to").toString()
+                    val from=document.data.get("from").toString()
+                    val date=document.data.get("date").toString()
+                    val time=document.data.get("time").toString()
+                    val mobileNum=document.data.get("mobile").toString()
+                    val item = BookingRecordModel(from, to, date, time, name,mobileNum)
+                    recordList.add(item)
+                    Log.d("abhsihek",name+to+from+time)
                 }
+                setRecyclerView()
             }.addOnFailureListener { exception ->
                     Log.w("Abhishek", "Error getting documents: ", exception)
                 }
         }
 
-        val item = BookingRecordModel(
-            "Royal Mangal Hotel",
-            "SMS Hospital",
-            "12-12-21",
-            "9AM",
-            "Amol",
-            7845121215
-        )
-        val ite2 = BookingRecordModel(
-            "Royal Mangal Hotel",
-            "SMS Hospital",
-            "12-11-21",
-            "9AM",
-            "Amol",
-            7845121215
-        )
-        val item3 = BookingRecordModel(
-            "Royal Mangal Hotel",
-            "SMS Hospital",
-            "12-12-21",
-            "9AM",
-            "Amol",
-            7845121215
-        )
-        val ite4 = BookingRecordModel(
-            "Royal Mangal Hotel",
-            "SMS Hospital",
-            "12-12-12",
-            "9AM",
-            "Amol",
-            7845121215
-        )
-        recordList.add(item)
-        recordList.add(ite2)
-        recordList.add(ite4)
-        recordList.add(item3)
-        setRecyclerView()
+//        val item = BookingRecordModel(
+//            "Royal Mangal Hotel",
+//            "SMS Hospital",
+//            "12-12-21",
+//            "9AM",
+//            "Amol",
+//            7845121215
+//        )
+//        val ite2 = BookingRecordModel(
+//            "Royal Mangal Hotel",
+//            "SMS Hospital",
+//            "12-11-21",
+//            "9AM",
+//            "Amol",
+//            7845121215
+//        )
+//        val item3 = BookingRecordModel(
+//            "Royal Mangal Hotel",
+//            "SMS Hospital",
+//            "12-12-21",
+//            "9AM",
+//            "Amol",
+//            7845121215
+//        )
+//        val ite4 = BookingRecordModel(
+//            "Royal Mangal Hotel",
+//            "SMS Hospital",
+//            "12-12-12",
+//            "9AM",
+//            "Amol",
+//            7845121215
+//        )
+//        recordList.add(item)
+//        recordList.add(ite2)
+//        recordList.add(ite4)
+//        recordList.add(item3)
+
 
     }
 
     private fun setRecyclerView() {
         recyclerViewRecords.adapter = RecordAdapter(recordList)
         recyclerViewRecords.layoutManager = LinearLayoutManager(requireActivity())
+
     }
 }
