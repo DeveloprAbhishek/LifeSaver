@@ -32,7 +32,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/etEmailSUp"
+        android:id="@+id/etAddress_new"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/etNameSUp"
@@ -44,27 +44,27 @@
         android:background="@drawable/et_bg"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:hint="Enter Mobile No. here"
+        android:hint="Your Address"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/etPasswordSUp"
+        android:id="@+id/et_hospital_add"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@id/etEmailSUp"
+        android:layout_below="@id/etAddress_new"
         android:layout_marginHorizontal="28dp"
         android:autofillHints="password"
         android:background="@drawable/et_bg"
         android:fontFamily="@font/poppins_medium"
         android:gravity="center"
-        android:hint="Enter your password here"
+        android:hint="Hospital Address"
         android:inputType="textPassword" />
 
     <RelativeLayout
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/etPasswordSUp"
+        android:layout_below="@id/et_hospital_add"
         android:layout_margin="28dp"
         android:layout_marginBottom="12dp"
         android:orientation="horizontal">
@@ -83,7 +83,7 @@
             android:padding="12dp"
             android:textColor="@color/quantum_grey"
             android:textSize="15sp"
-            android:textStyle="italic|bold" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/btn_select_date_exp"
@@ -110,7 +110,7 @@
 <!--        android:inputType="textPassword" />-->
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSignUp"
+        android:id="@+id/btn_emergency_in"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@id/etName"

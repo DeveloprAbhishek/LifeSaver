@@ -105,7 +105,7 @@
                 android:id="@+id/tv_name_det"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Amol Pardeshi"
+                android:text="Abhishek"
                 android:textColor="@color/primary_color1"
                 android:textSize="18sp"
                 android:textStyle="bold" />
