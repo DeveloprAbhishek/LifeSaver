@@ -58,7 +58,7 @@
         android:layout_marginTop="90dp"
         android:backgroundTint="@color/primary_color1"
         android:fontFamily="@font/poppins_medium"
-        android:text="Sign UP"
+        android:text="Login"
         android:textSize="18dp"
         android:textStyle="bold"
         app:cornerRadius="10dp" />
