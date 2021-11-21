@@ -33,7 +33,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/etEmailSUp"
+        android:id="@+id/etAddress_new"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_below="@id/etNameSUp"
@@ -53,7 +53,7 @@
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@id/etEmailSUp"
+        android:layout_below="@id/etAddress_new"
         android:layout_marginHorizontal="28dp"
         android:layout_marginTop="90dp"
         android:backgroundTint="@color/primary_color1"

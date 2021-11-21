@@ -73,6 +73,7 @@
                 android:weightSum="2">
 
                 <TextView
+                    android:id="@+id/tv_booking_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -82,6 +83,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tv_booking_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -100,9 +102,10 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_name_det"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Amol Pardeshi"
+                android:text="Abhishek"
                 android:textColor="@color/primary_color1"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -116,6 +119,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_from_det"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:breakStrategy="high_quality"
@@ -134,6 +138,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_to_det"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:breakStrategy="high_quality"
@@ -164,64 +169,64 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <RelativeLayout
-        android:id="@+id/bottom_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:padding="12dp">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/bottom_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:padding="12dp">-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/primary_color1" />
+<!--        <View-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="2dp"-->
+<!--            android:background="@color/primary_color1" />-->
 
-        <RelativeLayout
-            android:id="@+id/pay_ctnr"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="12dp">
+<!--        <RelativeLayout-->
+<!--            android:id="@+id/pay_ctnr"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginStart="12dp"-->
+<!--            android:layout_marginTop="12dp"-->
+<!--            android:layout_marginEnd="12dp"-->
+<!--            android:layout_marginBottom="12dp">-->
 
-            <TextView
-                android:id="@+id/tc_tag"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:text="Total Charges:"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:id="@+id/tc_tag"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:text="Total Charges:"-->
+<!--                android:textSize="17sp"-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tc_tag"
-                android:layout_alignParentStart="true"
-                android:breakStrategy="high_quality"
-                android:ellipsize="end"
-                android:text="Rs .15000"
-                android:textColor="@color/primary_color1"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_below="@+id/tc_tag"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:breakStrategy="high_quality"-->
+<!--                android:ellipsize="end"-->
+<!--                android:text="Rs .15000"-->
+<!--                android:textColor="@color/primary_color1"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textStyle="bold" />-->
 
-            <Button
-                android:id="@+id/btn_pay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text="Pay" />
-        </RelativeLayout>
+<!--            <Button-->
+<!--                android:id="@+id/btn_pay"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:text="Pay" />-->
+<!--        </RelativeLayout>-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/pay_ctnr"
             android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
             android:weightSum="2">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_call_care"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -229,7 +234,7 @@
                 android:layout_weight="1"
                 android:text="Call Support" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_cancel_booking"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -237,5 +242,4 @@
                 android:layout_weight="1"
                 android:text="Cancel Booking" />
         </LinearLayout>
-    </RelativeLayout>
 </RelativeLayout>

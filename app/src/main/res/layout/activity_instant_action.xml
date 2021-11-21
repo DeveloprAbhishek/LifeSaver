@@ -63,19 +63,31 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/btnInstantEmergency"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF"
+            android:gravity="center"
             android:layout_margin="12dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/poppins_semibold"
-            android:padding="12dp"
-            android:text="@string/emergency"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary_color1" />
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_emergency_icon_2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
+                android:padding="7dp"
+                android:text="Emergency"
+                android:textColor="@color/primary_color1"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

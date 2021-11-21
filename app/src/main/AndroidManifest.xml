@@ -17,7 +17,7 @@
         android:theme="@style/Theme.LifeSaver">
         <activity
             android:name=".ui.activity.BookingDetailsActivity"
-            android:exported="true" >
+            android:exported="true">
 
         </activity>
 
