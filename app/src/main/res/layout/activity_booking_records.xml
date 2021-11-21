@@ -1,177 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     android:padding="7dp"
-    tools:context=".ui.activity.BookingRecords">
+    tools:context=".ui.activity.userhome.UserHomeFragment">
 
-    <TextView
-        android:id="@+id/recent_tag"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="7dp"
-        android:text="Upcoming bookings:"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+        android:layout_marginBottom="5dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHeartAttack"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/cardBleeding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeicon_heartattack" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBleeding"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toStartOf="cardRespiratrory"
+            app:layout_constraintStart_toEndOf="@id/cardHeartAttack"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeicon_bleeding" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardRespiratrory"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardBleeding"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeicon_respiratory" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <!--    3rd row-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="5dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardVommiting"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toStartOf="@+id/cardBodyHeat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeicon_vommiting" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBodyHeat"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toStartOf="cardHeadache"
+            app:layout_constraintStart_toEndOf="@id/cardVommiting"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeicon_bodyheat" />
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardHeadache"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="19dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cardBodyHeat"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/homeicon_hedache" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnEmergencyfromHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/recent_tag"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
-        android:padding="7dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="7dp">
+        android:layout_marginHorizontal="12dp"
+        android:backgroundTint="@color/white"
+        android:padding="12dp"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="100dp"
+        app:strokeColor="@color/primary_color1"
+        app:strokeWidth="1dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:background="#FF5757"
+            android:gravity="center"
+            android:padding="3dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_emergency_icon" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/primary_color1"
+                android:fontFamily="@font/poppins"
+                android:gravity="center"
                 android:padding="10dp"
-                android:text="Date and Time:"
+                android:text="Emergency"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    android:text="N/A"
-                    android:textColor="@color/primary_color1"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    android:text="N/A"
-                    android:textColor="@color/primary_color1"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    android:text="From:"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    android:text="N/A"
-                    android:textColor="@color/primary_color1"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:drawableStartCompat="@drawable/ic_location" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    android:text="To:"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:padding="10dp"
-                    android:text="N/A"
-                    android:textColor="@color/primary_color1"
-                    android:textSize="17sp"
-                    android:textStyle="bold"
-                    app:drawableStartCompat="@drawable/ic_location" />
-            </LinearLayout>
-
-
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
+</LinearLayout>
+
+    <!--<TextView-->
+    <!--android:id="@+id/recent_tag"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="7dp"-->
+    <!--android:text="Recent bookings:"-->
+    <!--android:textColor="@color/black"-->
+    <!--android:textSize="22sp"-->
+    <!--android:textStyle="bold" />-->
+
+    <!--<com.google.android.material.card.MaterialCardView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/recent_tag"-->
+    <!--android:layout_marginTop="12dp"-->
+    <!--android:layout_marginBottom="12dp"-->
+    <!--android:padding="7dp"-->
+    <!--app:cardCornerRadius="12dp"-->
+    <!--app:cardElevation="7dp">-->
+
+    <!--<LinearLayout-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:orientation="vertical">-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:background="@color/primary_color1"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:text="Date and Time:"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="20sp"-->
+    <!--        android:textStyle="bold" />-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:weightSum="2">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:text="13 December 2021"-->
+    <!--            android:textColor="@color/primary_color1"-->
+    <!--            android:textSize="17sp"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:text="9 AM"-->
+    <!--            android:textColor="@color/primary_color1"-->
+    <!--            android:textSize="17sp"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:text="From:"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="17sp" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:text="Abhishek Nagar, Amol Vihar"-->
+    <!--            android:textColor="@color/primary_color1"-->
+    <!--            android:textSize="17sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            app:drawableStartCompat="@drawable/ic_location" />-->
+    <!--    </LinearLayout>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:text="To:"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="17sp" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:padding="10dp"-->
+    <!--            android:text="National Hospital"-->
+    <!--            android:textColor="@color/primary_color1"-->
+    <!--            android:textSize="17sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            app:drawableStartCompat="@drawable/ic_location" />-->
+    <!--    </LinearLayout>-->
 
 
-    <LinearLayout
-        android:id="@+id/button_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+    <!--</LinearLayout>-->
+    <!--</com.google.android.material.card.MaterialCardView>-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/button_group"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:orientation="vertical">-->
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/btn_eergency"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:backgroundTint="@color/white"
-            android:padding="12dp"
-            app:strokeColor="@color/primary_color1"
-            app:strokeWidth="1dp">
+    <!--<com.google.android.material.card.MaterialCardView-->
+    <!--    android:id="@+id/btn_eergency"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="wrap_content"-->
+    <!--    android:layout_margin="12dp"-->
+    <!--    android:backgroundTint="@color/white"-->
+    <!--    android:padding="12dp"-->
+    <!--    app:strokeColor="@color/primary_color1"-->
+    <!--    app:strokeWidth="1dp">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#FF5757"
-                android:gravity="center"
-                android:orientation="horizontal">
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:background="#FF5757"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="horizontal">-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_emergency_icon" />
+    <!--        <ImageView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:src="@drawable/ic_emergency_icon" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/poppins"
-                    android:gravity="center"
-                    android:padding="7dp"
-                    android:text="Emergency"
-                    android:textColor="@color/white"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
-</RelativeLayout>
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:fontFamily="@font/poppins"-->
+    <!--            android:gravity="center"-->
+    <!--            android:padding="7dp"-->
+    <!--            android:text="Emergency"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="17sp"-->
+    <!--            android:textStyle="bold" />-->
+    <!--    </LinearLayout>-->
+    <!--</com.google.android.material.card.MaterialCardView>-->
+    <!--</LinearLayout>-->
