@@ -5,6 +5,8 @@ import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
@@ -12,6 +14,10 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Status
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -26,15 +32,24 @@ import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.masai.lifesaver.R
 import com.masai.lifesaver.data.network.NetworkService
 import com.masai.lifesaver.maps.MapsPresenter
 import com.masai.lifesaver.maps.MapsView
+import com.masai.lifesaver.models.BookingRecordModel
+import com.masai.lifesaver.ui.activity.userhome.UserHomeActivity
+import com.masai.lifesaver.ui.model.User
 import com.masai.lifesaver.utils.AnimationUtils
 import com.masai.lifesaver.utils.MapUtils
 import com.masai.lifesaver.utils.PermissionUtils
 import com.masai.lifesaver.utils.ViewUtils
 import kotlinx.android.synthetic.main.activity_emergency.*
+import java.util.*
 
 class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
 
@@ -44,6 +59,11 @@ class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
         private const val PICKUP_REQUEST_CODE = 1
         private const val DROP_REQUEST_CODE = 2
     }
+
+    private lateinit var googleSignInClient: GoogleSignInClient
+    private var rcSignIn = 7
+    private lateinit var gAuth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
 
     private lateinit var presenter: MapsPresenter
     private lateinit var googleMap: GoogleMap
@@ -64,6 +84,11 @@ class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_emergency)
+        gAuth = FirebaseAuth.getInstance()
+        if (gAuth.currentUser == null) {
+            processReqToGoogle()
+        }
+
         ViewUtils.enableTransparentStatusBar(window)
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -323,6 +348,14 @@ class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
                     Log.d(TAG, "Place Selection Canceled")
                 }
             }
+        } else  if (requestCode == rcSignIn) {
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                firebaseAuthWithGoogle(account.idToken!!)
+            } catch (e: Exception) {
+                Log.d(TAG, "onActivityResult: ${e.message}")
+            }
         }
     }
 
@@ -340,14 +373,57 @@ class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
         }
     }
 
+    private fun getAddress(latLng: LatLng): String {
+        val geocoder = Geocoder(this, Locale.getDefault())
+        val addresses: List<Address>?
+        val address: Address?
+        var addressText = ""
+
+        addresses = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
+
+        if (addresses.isNotEmpty()) {
+            address = addresses[0]
+            addressText = address.getAddressLine(0)
+        } else{
+            addressText = "its not appear"
+        }
+        return addressText
+    }
+
     override fun informCabBooked() {
+        saveBookingDataToFirebase()
+
         nearbyCabMarkerList.forEach { it.remove() }
         nearbyCabMarkerList.clear()
         requestCabButton.visibility = View.GONE
         statusTextView.text = getString(R.string.your_cab_is_booked)
     }
 
+    private fun saveBookingDataToFirebase() {
+        val curAddress = pickUpLatLng?.let { getAddress(it) }
+        val destiAddress = dropLatLng?.let { getAddress(it) }
+        val calendar = Calendar.getInstance()
+
+        val currentHour = calendar[Calendar.HOUR_OF_DAY]
+        val currentMinute = calendar[Calendar.MINUTE]
+        val second = calendar[Calendar.SECOND]
+        val day = calendar[Calendar.DAY_OF_MONTH]
+        val month = calendar[Calendar.MONTH]
+        val year = calendar[Calendar.YEAR]
+
+        val date = "$day-$month-$year"
+        val time = "$currentHour:$currentMinute:$second"
+
+        val booking = BookingRecordModel(curAddress, destiAddress, date, time,)
+
+        val uid = gAuth.uid
+        if (uid != null) {
+            db.collection("user").document(uid).collection("bookings").add(booking)
+        }
+    }
+
     override fun showPath(latLngList: List<LatLng>) {
+
         val builder = LatLngBounds.Builder()
         for (latLng in latLngList) {
             builder.include(latLng)
@@ -451,5 +527,44 @@ class EmergencyActivity : AppCompatActivity(), MapsView, OnMapReadyCallback {
     }
 
 
+    //Firebase Authentication check
+    private fun processReqToGoogle() {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(getString(R.string.default_web_client_id))//ignore this error and run the app.
+            .requestEmail().build()
+        googleSignInClient = GoogleSignIn.getClient(this, gso)
+        executeLoginProcess()
+    }
 
+    private fun executeLoginProcess() {
+        val signingIntent = googleSignInClient.signInIntent
+        startActivityForResult(signingIntent, rcSignIn)
+    }
+
+    private fun firebaseAuthWithGoogle(idToken: String) {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        gAuth.signInWithCredential(credential)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    val user1 = gAuth.currentUser
+                    val uid = user1?.uid
+                    val name = user1?.displayName
+                    val email = user1?.email
+                    val phone = user1?.phoneNumber
+                    val image = user1?.photoUrl
+
+                    val user = User(uid, name, phone, email, image.toString())
+
+
+                    db.collection("user").document(uid.toString()).set(user)
+
+                } else {
+                    toast("Please check your internet connection or try again")
+                }
+            }
+    }
+
+    private fun toast(s: String) {
+        Toast.makeText(this, s, Toast.LENGTH_SHORT).show()
+    }
 }
