@@ -1,85 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     tools:context=".ui.loginpackage.SignupOrLoginFragment">
 
-
-    <ImageView
-        android:id="@+id/iv_app_logo"
-        android:layout_width="170dp"
-        android:layout_height="170dp"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_ls_splash"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="88dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="70dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="7dp">
 
-    <ImageButton
-        android:id="@+id/btnFacebook"
-        android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_ls_splash" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ic_bg_instant" />
+
+    <LinearLayout
+        android:id="@+id/button_group"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginBottom="96dp"
-        android:background="@android:color/transparent"
-        android:elevation="5dp"
-        android:src="@drawable/img_facebook"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignupFrag"
-        app:layout_constraintEnd_toStartOf="@+id/btnGoogle"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="22dp"
+        android:orientation="vertical">
 
-    <ImageButton
-        android:id="@+id/btnGoogle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="96dp"
-        android:background="@android:color/transparent"
-        android:elevation="5dp"
-        android:src="@drawable/img_google"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignupFrag"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnFacebook" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSignupFrag"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="124dp"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Sign up"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignInFrag"
+                style="@style/instant_screen_button"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppins"
+                android:padding="12dp"
+                android:text="Login"
+                android:textColor="@color/primary_color1"
+                android:textStyle="bold" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnSignIn"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="26dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/poppins_medium"
-        android:text="Log IN"
-        android:textColor="@color/primary_color1"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:cornerRadius="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSignupFrag"
-        app:strokeColor="@color/primary_color1"
-        app:strokeWidth="2dp" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSignUpFrag"
+                style="@style/instant_screen_button"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/poppins"
+                android:padding="12dp"
+                android:text="Sign Up"
+                android:textColor="@color/primary_color1"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/btnInstantEmergency"
+            android:layout_margin="12dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_semibold"
+            android:padding="12dp"
+            android:text="@string/emergency"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_color1" />
+    </LinearLayout>
+
+</RelativeLayout>
