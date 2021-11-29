@@ -41,7 +41,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_login_as_user"
+                android:id="@+id/btnSignInFrag"
                 style="@style/instant_screen_button"
                 android:layout_alignParentStart="true"
                 android:backgroundTint="@color/white"
@@ -52,7 +52,7 @@
                 android:textStyle="bold" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_login_as_partner"
+                android:id="@+id/btnSignUpFrag"
                 style="@style/instant_screen_button"
                 android:layout_alignParentEnd="true"
                 android:backgroundTint="@color/white"
@@ -64,6 +64,7 @@
         </RelativeLayout>
 
         <LinearLayout
+            android:id="@+id/btnInstantEmergency"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#FFFFFF"

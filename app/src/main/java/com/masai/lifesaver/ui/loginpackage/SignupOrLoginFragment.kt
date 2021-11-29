@@ -13,10 +13,10 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.masai.lifesaver.R
 import com.masai.lifesaver.ui.activity.EmergencyActivity
 import com.masai.lifesaver.ui.activity.HomeActivity
-import kotlinx.android.synthetic.main.fragment_signup_or_login.*
+import kotlinx.android.synthetic.main.activity_instant_action.*
 
 
-class SignupOrLoginFragment : Fragment(R.layout.fragment_signup_or_login) {
+class SignupOrLoginFragment : Fragment(R.layout.activity_instant_action) {
     private val SIGN_IN_KEY = 1
     private lateinit var mAuth: FirebaseAuth
 
